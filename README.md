@@ -4,29 +4,31 @@ Turn HTML imports into strings.
 
 ## Example
 
-Given the following _example.html_.
+Given the following _example.svg_.
 
 ```html
-<h1>Hello</h1>
+<svg  height="100" width="100">
+  <circle cx="50" cy="50" r="40" />
+</svg>
 ```
 
 #### in
 
 ```js
-import html from './example.html';
+import svg from './example.svg';
 ```
 
 #### out
 
 ```js
-var html = '<h1>Hello</h1>';
+var svg = '<svg  height="100" width="100"><circle cx="50" cy="50" r="40" /></svg>';
 ```
 
 
 ## Installation
 
 ```sh
-$ npm install babel-plugin-transform-html-import-to-string
+$ npm install babel-plugin-transform-svg-import-to-string
 ```
 
 ## Usage
@@ -37,20 +39,20 @@ $ npm install babel-plugin-transform-html-import-to-string
 
 ```json
 {
-  "plugins": ["transform-html-import-to-string"]
+  "plugins": ["transform-svg-import-to-string"]
 }
 ```
 
 ### Via CLI
 
 ```sh
-$ babel --plugins transform-html-import-to-string script.js
+$ babel --plugins transform-svg-import-to-string script.js
 ```
 
 ### Via Node API
 
 ```javascript
 require("babel-core").transform("code", {
-  plugins: ["transform-html-import-to-string"]
+  plugins: ["transform-svg-import-to-string"]
 });
 ```
